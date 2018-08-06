@@ -79,5 +79,5 @@ theme: jsimple
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/vpinfra/vpinfra.github.io.git
+  repo: https://github_token@github.com/vpinfra/vpinfra.github.io.git
   branch: master
