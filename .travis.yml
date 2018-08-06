@@ -12,11 +12,8 @@ install:
 script:
   - hexo clean
   - hexo generate
-  - hexo deploy
 
 after_script:
-  - cd ./public
-  - git init
   - git config user.name "harveyspace"
   - git config user.email "harveyer@163.com"
   - sed -i "s/github_token/${github_token}/g" ./_config.yml
