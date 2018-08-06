@@ -1,5 +1,9 @@
 language: node_js
 node_js: stable
+#缓存
+cache:
+  directories:
+  - node_modules
 
 # S: Build Lifecycle
 install:
