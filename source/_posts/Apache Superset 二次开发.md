@@ -1,8 +1,10 @@
-﻿# Apache Superset 二次开发
-
-标签（空格分隔）： 前端
-
----
+﻿id: 201807112034
+title: Apache Superset 二次开发
+date: 2018-07-11 20:34:11
+categories: 前端
+tags: [前端]
+author: 羊鑫宇
+------
 
 首先介绍一下**superset**，Superset 是 Airbnb 开源的一个旨在视觉，直观和交互式的数据探索平台（曾用名 Panoramix、Caravel，现已进入 Apache 孵化器），给上github链接:[点这里](https://github.com/apache/incubator-superset)
 
