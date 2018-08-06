@@ -19,10 +19,9 @@ after_script:
   - git init
   - git config user.name "harveyspace"
   - git config user.email "harveyer@163.com"
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${githubblog}@${GH_REF}" master:master
-
+  - sed -i "s/github_token/${github_token}/g" ./_config.yml
+  - cat ./_config.yml
+  - hexo g -d
 branches:
   only:
     - hexo
