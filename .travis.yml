@@ -6,7 +6,8 @@ install:
   - npm install
 
 
-#before_script:
+before_script:
+- export TZ='Asia/Shanghai'
  # - npm install -g gulp
 
 script:
