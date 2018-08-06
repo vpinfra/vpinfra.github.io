@@ -1,0 +1,29 @@
+language: node_js
+node_js: stable
+
+# S: Build Lifecycle
+install:
+  - npm install
+
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - hexo g
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "harveyspace"
+  - git config user.email "harveyer@163.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${githubblog}@${GH_REF}" master:master
+
+branches:
+  only:
+    - hexo
+env:
+ global:
+   - GH_REF: github.com/vpinfra/vpinfra.github.io.git
