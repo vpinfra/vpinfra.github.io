@@ -29,7 +29,7 @@ Spring Cloud Config的功能并不能完美的应对复杂的分布式场景，�
 4. 服务链路监控
 
 Spring Cloud支持基于 Zipkin 的调用链监控，我们在生产中结合自研 trace 系统实现了服务的链路追踪，对于微服务场景下的问题排查有非常大的帮助：
-
+![链路追踪](http://or2cbrqay.bkt.clouddn.com/v2-e952deddc1e11b4be0af3032fde24f5e_r.jpg)
 5. 服务监控和告警
 
    我们在生产中通过 Influxdb 和 Grafana 实现了监控服务，架构如图：
