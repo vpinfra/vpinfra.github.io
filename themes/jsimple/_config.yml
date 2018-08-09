@@ -28,7 +28,7 @@ siteBuildingTime: 01/20/2018
 ## BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
 menu:
    前端: 前端
-   后台: 后台
+   后端: 后台
    运维: 运维
    BI: 大数据
    AI: 人工智能

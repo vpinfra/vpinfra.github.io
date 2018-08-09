@@ -5,6 +5,13 @@ categories: 后端
 tags: [后端]
 author: harvey
 ------
+id: 201808092012
+title: Spring-Cloud 微服务实战
+date: 2018-08-09 20:12:45
+categories: 后端
+tags: [后端]
+author: harvey
+------
 说到微服务，相信大家一定不陌生，Duobbo、Spring Cloud 都是目前很流行的微服务框架，Spring Cloud 对于中小型互联网公司来说是一种福音，它利用 Spring Boot 的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，使用 Spring Cloud 一站式解决方案能在从容应对业务发展的同时大大减少开发成本，但是在技术选型和实际生产应用中仍然会碰到很多的问题。所以结合我司[VPGAME](http://www.vpgame.com/)在交易、库存、消息、赛事、[Dota2 数据服务](http://open.varena.com/)等核心业务场景的实际落地经验，以及国内外一线互联网公司在微服务的开源实践，总结出一些 Spring Cloud 微服务实践和使用过程出现的问题，希望能够为大家解决一些疑惑。
 1. 服务注册与发现
 - 服务注册：
@@ -23,18 +30,20 @@ Zuul 网关在 Netflix 经过生产级验证，在纳入 Spring Cloud 体系之�
 a.线程数，Ribbon 总连接数、单个路由连接数、超时时间，Hystrix 熔断条件等核心参数的配置
 b.Zuul 1.0 是同步阻塞架构，依赖多线程来支持吞吐量的增长，高并发情况下因为某个服务异常容易导致雪崩，因此需要结合 Hystrix 实现服务熔断和降级。但是 [Zuul 2.0](https://mp.weixin.qq.com/s?__biz=MzIwMzg1ODcwMw==&mid=2247487846&idx=1&sn=0db93ba1f881783edf85871a2fe34730&chksm=96c9a706a1be2e10e8c531f7f277b89247a0b3530af95a7fe1142223eacfbfd2e864bd6227d3&mpshare=1&scene=23&srcid=0523ojuQsAJtCxbCnd1Putfr#rd) 用异步非阻塞架构可以更好的解决该问题，同时2.0版本还发布了许多新特性，需要在生产中实践验证。
 3. 配置中心：
-Spring Cloud Config 的功能并不能完美的应对复杂的分布式场景，也不能进行可视化管理，而携程开源的 [Apollo](https://github.com/ctripcorp/apollo/wiki) 支持完善的管理界面，支持多环境，配置变更实时生效，权限和配置审计等多种生产级功能，更适合目前在生产环境中的直接使用。
+
+Spring Cloud Config的功能并不能完美的应对复杂的分布式场景，也不能进行可视化管理，而携程开源的 [Apollo](https://github.com/ctripcorp/apollo/wiki) 支持完善的管理界面，支持多环境，配置变更实时生效，权限和配置审计等多种生产级功能，更适合目前在生产环境中的直接使用。
 4. 服务链路监控
 
 Spring Cloud支持基于 Zipkin 的调用链监控，我们在生产中结合自研 trace 系统实现了服务的链路追踪，对于微服务场景下的问题排查有非常大的帮助：
 
 5. 服务监控和告警
+
    我们在生产中通过 Influxdb 和 Grafana 实现了监控服务，架构如图1：
-![image](http://or2cbrqay.bkt.clouddn.com/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+![监控服务架构图](http://or2cbrqay.bkt.clouddn.com/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 图1  （监控服务架构图）
 另外附上我们的整体微服务分层架构（图2）和网关示意图（图3），有不足之处欢迎留言一起探讨。
-![image](http://or2cbrqay.bkt.clouddn.com/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%88%86%E5%B1%82.jpg)
+![微服务分层架构图](http://or2cbrqay.bkt.clouddn.com/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%88%86%E5%B1%82.jpg)
  图2 (微服务分层架构图)
-![image](http://or2cbrqay.bkt.clouddn.com/api-gate%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg)
+![网关示意图](http://or2cbrqay.bkt.clouddn.com/api-gate%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg)
 图3（网关示意图）
    写在结尾，以上只是整个微服务架构体系中的一部分，在分布式微服务架构中分布式锁、分布式缓存、微服务的部署和持续集成等都是非常重要的，在此就没有一一进行列举。总之我们需要保持对新技术的渴望和追求，更应该结合公司的实际情况，选择最适合的技术栈和架构。
