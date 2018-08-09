@@ -5,13 +5,6 @@ categories: 后端
 tags: [后端]
 author: harvey
 ------
-id: 201808092012
-title: Spring-Cloud 微服务实战
-date: 2018-08-09 20:12:45
-categories: 后端
-tags: [后端]
-author: harvey
-------
 说到微服务，相信大家一定不陌生，Duobbo、Spring Cloud 都是目前很流行的微服务框架，Spring Cloud 对于中小型互联网公司来说是一种福音，它利用 Spring Boot 的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，使用 Spring Cloud 一站式解决方案能在从容应对业务发展的同时大大减少开发成本，但是在技术选型和实际生产应用中仍然会碰到很多的问题。所以结合我司[VPGAME](http://www.vpgame.com/)在交易、库存、消息、赛事、[Dota2 数据服务](http://open.varena.com/)等核心业务场景的实际落地经验，以及国内外一线互联网公司在微服务的开源实践，总结出一些 Spring Cloud 微服务实践和使用过程出现的问题，希望能够为大家解决一些疑惑。
 1. 服务注册与发现
 - 服务注册：
