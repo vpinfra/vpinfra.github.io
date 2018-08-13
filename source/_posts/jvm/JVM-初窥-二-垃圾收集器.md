@@ -1,7 +1,7 @@
 ---
 id: 201808131912
 title: JVM 初窥(二) 垃圾回收
-date: 2018-08-12 20:12:45
+date: 2018-08-13 22:12:45
 categories: JVM
 tags: [JVM, Java虚拟机]
 author: 贺方舟

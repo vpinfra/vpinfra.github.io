@@ -1,7 +1,7 @@
 ---
-id: 201808131917
+id: 201808131910
 title: JVM 初窥(一) JVM内存区域划分
-date: 2018-08-12 20:12:45
+date: 2018-08-13 20:12:45
 categories: JVM
 tags: [JVM, Java虚拟机]
 author: 贺方舟
