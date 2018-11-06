@@ -136,7 +136,7 @@ private boolean addWorker(Runnable firstTask, boolean core) {
         int c = ctl.get();
         int rs = runStateOf(c);// 当前线程池状态
         //RUNNING(-536870912)：运行态，可处理新任务并执行队列中的任务
-        //SHUTDOW(0): 运行态，可处理新任务并执行队列中的任务
+        //SHUTDOW(0): 待停止态，不接受新任务，但是会处理队列中的任务
         //STOP(536870912):停止态，不接受新任务，不处理队列中任务，且打断运行中任务
         //TIDYING(1073741824): 整理态，所有任务已经结束，workerCount = 0 ，将执行terminated()方法
         //TERMINATED(1610612736): 结束态，terminated() 方法已完成
