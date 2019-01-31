@@ -101,7 +101,7 @@ EJ针对作业有三种配置：
 2. JobTypeConfiguration
 3. JobRootConfiguration
 
-每种配置相互相互依赖，最终确定一个作业的配置，举个获取作业配的栗子：
+每种配置相互依赖，最终确定一个作业的配置，举个获取作业配的栗子：
 ```
  private LiteJobConfiguration getLiteJobConfiguration(final Class<? extends SimpleJob> jobClass, final String cron, final int shardingTotalCount, String shardingParamters) {
         return LiteJobConfiguration.newBuilder(
@@ -169,8 +169,8 @@ public JobScheduler mySecondJobScheduler() {
 ```
 然后需要在spring application.properties或者yml文件中添加zk配置：
 ```
-zk.elastic.job.server-lists=192.168.7.87:2181
-zk.elastic.job.namespace=skyli
+zk.elastic.job.server-lists=ip:port
+zk.elastic.job.namespace=your namespace
 ```
 紧接着只需要在定义Job是在类声明时添加@JobConf注解便能完成分布式Job的定义：
 ```
