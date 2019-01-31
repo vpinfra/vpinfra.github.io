@@ -1,5 +1,5 @@
 title: 快速整合Elastic-Job
-date: 2019-0-31 14:12:45
+date: 2019-01-31 14:12:45
 categories: 后端
 tags: [后端]
 author: skyli
@@ -149,9 +149,9 @@ public JobScheduler mySecondJobScheduler() {
 
 这样一个可以在分布式环境中运行的Job便定义好了，spring项目在多个服务器中运行时，该Job便能根据分片策略将不同的分片分派到指定服务器运行了,看下运行结果（两台服务器）：
 服务器1:
->>>![](https://raw.githubusercontent.com/lz330718637/Images/master/20190131125146.png)
+![](https://raw.githubusercontent.com/lz330718637/Images/master/20190131125146.png)
 服务器2：
->>>![](https://raw.githubusercontent.com/lz330718637/Images/master/20190131130623.png)
+![](https://raw.githubusercontent.com/lz330718637/Images/master/20190131130623.png)
 
 不知大家有没有发现有什么不妥的地方？ 定义一个简单的分布式作业需要配置大量的代码，无论你采用什么方式（xml或者java显示配置）。
 
@@ -193,8 +193,8 @@ public class MyThreeTask implements SimpleJob {
 ```
 分别将项目在不同服务器上启动，便可以看到定义的作业在不同机器上运行的情况（运行结果与上述单独配置运行结果相同）：
 服务器1:
->>>![](https://raw.githubusercontent.com/lz330718637/Images/master/20190131125146.png)
+![](https://raw.githubusercontent.com/lz330718637/Images/master/20190131125146.png)
 服务器2：
->>>![](https://raw.githubusercontent.com/lz330718637/Images/master/20190131130623.png)
+![](https://raw.githubusercontent.com/lz330718637/Images/master/20190131130623.png)
 
 OK，如何将EJ整合到项目中就说到这里吧！^_^
